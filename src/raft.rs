@@ -67,7 +67,7 @@ pub struct RaftState {
 
 impl RaftState {
     pub fn new(id: u64) -> Self {
-        let election_timeout_ms = id * 10000;
+        let election_timeout_ms = 3000 + (id * 1000);
         RaftState {
             id,
             role: Role::Follower,
